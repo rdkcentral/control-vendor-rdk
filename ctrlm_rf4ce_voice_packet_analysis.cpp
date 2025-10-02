@@ -17,7 +17,8 @@
  * limitations under the License.
 */
 
-#include "../ctrlm_voice_packet_analysis.h"
+#include <glib.h>
+#include "ctrlm_private/ctrlm_voice_packet_analysis.h"
 
 #define SEQUENCE_NUM_INVALID  (0xFF)
 

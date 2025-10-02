@@ -18,8 +18,8 @@
 */
 #include <glib.h>
 #include <vector>
-#include "ctrlm_vendor_network_factory.h"
-#include "ctrlm_log.h"
+#include "ctrlm_private/ctrlm_vendor_network_factory.h"
+#include "ctrlm_private/ctrlm_log.h"
 
 // vector contains vendor's network factory functions
 // vector is declared as pointer, because vendor's network factory initializers objects
@@ -48,7 +48,7 @@ void ctrlm_vendor_network_factory_func_add(ctrlm_vendor_network_factory_func_t* 
 
 // by the time of this function call, ctrlm_vendor_network_factory_func_chain will be initialized with
 // vendor factory functions
-int ctrlm_vendor_network_factory(unsigned long ignore_mask, json_t *json_config_root, networks_map_t& networks) {
+int ctrlm_vendor_network_factory(vendor_network_opts_t *ignore_mask, json_t *json_config_root, networks_map_t& networks) {
   if (0 == ctrlm_vendor_network_factory_func_chain){
     return 0;
   }
